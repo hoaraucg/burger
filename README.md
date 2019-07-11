@@ -1,2 +1,1 @@
-# burger
-Burger App
+# Eat-Da-Burger, Made in Sequelize
