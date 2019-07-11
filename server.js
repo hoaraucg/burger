@@ -6,7 +6,20 @@ var exphbs = require("express-handlebars");
 var db = require("./models");
 
 var app = express();
+
+if (process.env.JAWSDB_URL) {
+  var connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+  var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "burgers_db"
+  })
+}
+
 var PORT = process.env.PORT || 8080;
+
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
